@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+                color: rgb(121, 121, 218);
+                font-size: 25px;
+                background-color: rgb(255, 255, 255);
+        }
+        pre {
+            font-size: 20px;
+            
+        }
+        h2{
+            font-size: 35px;
+            color: rgb(6, 18, 100);
+        }
+      </style>
+</head>
+<body>
+    <h2 id="Q">QUESTIONS</h2>
+    <a href="#Q1">1. Create an applet showing the string "Hello World" which is embedded in the HTML page.</a><br><br>
+    <a href="#Q2">2. Create an applet showing the string "Hello World" which is executed by an appletviewer.</a><br><br>
+    <a href="#Q3">3. Create an applet in Java to draw a circle.</a><br><br>
+    <a href="#Q4">4. Create an applet in Java to draw a polygon.</a><br><br>
+    <a href="#Q5">5. Create an applet in Java to draw a rectangle.</a><br><br>
+    <a href="#Q6">6. Create an applet in Java to draw a square.</a><br><br>
+    <a href="#Q7">7. Create an applet in Java to draw a 4 concentric circles.</a><br><br>
+    <a href="#Q8">8. Create an applet in Java to draw a line.</a><br><br>
+    <a href="#Q9">9. Create an applet in Java to draw a oval.</a><br><br>
+    <a href="#Q10">10. Create an applet in Java to draw a arc.</a><br><br>
+    <a href="#Q11">11. Create an applet in Java to change the background color.</a><br><br>
+    <a href="#Q12">12. Create an applet in Java to draw rounded rectangle.</a><br><br>
+    <a href="#Q13">13. Create an applet in Java to set font</a><br><br>
+    <a href="#Q14">14. Create an applet to display a digital clock. </a><br><br>
+    <a href="#Q15">15. Java Program to Draw a Smiling Face using Graphics Class Methods</a><br><br>
+
+    <h2 id="Q1">1. Create an applet showing the string "Hello World" which is embedded in the HTML page.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class HelloWorldApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World", 20, 20);
+    }
+        
+Output:
+Hello World
+        
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q2">2. Create an applet showing the string "Hello World" which is executed by an appletviewer.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class HelloWorldAppletViewer extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World", 20, 20);
+    }
+        
+Output:
+Hello World
+        
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q3">3. Create an applet in Java to draw a circle.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class CircleApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawOval(20, 20, 100, 100);
+    }
+        
+Output:
+A circle drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q4">4. Create an applet in Java to draw a polygon.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class PolygonApplet extends Applet {
+    public void paint(Graphics g) {
+        int[] xPoints = {50, 100, 150, 100};
+        int[] yPoints = {50, 100, 50, 0};
+        g.drawPolygon(xPoints, yPoints, xPoints.length);
+    }
+        
+Output:
+A polygon drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q5">5. Create an applet in Java to draw a rectangle.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class RectangleApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRect(20, 20, 150, 75);
+    }
+        
+Output:
+A rectangle drawn in the applet.
+        
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q6">6. Create an applet in Java to draw a square.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class SquareApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRect(20, 20, 100, 100); // Square
+    }
+        
+Output:
+A square drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q7">7. Create an applet in Java to draw a 4 concentric circles.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class ConcentricCirclesApplet extends Applet {
+    public void paint(Graphics g) {
+        for (int i = 0; i < 4; i++) {
+            g.drawOval(20 + (i * 10), 20 + (i * 10), 100 - (i * 20), 100 - (i * 20));
+        }
+    }
+        
+Output:
+4 concentric circles drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q8">8. Create an applet in Java to draw a line.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class LineApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawLine(20, 20, 150, 150);
+    }
+        
+Output:
+A line drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q9">9. Create an applet in Java to draw a oval.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class OvalApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawOval(20, 20, 150, 75);
+    }
+        
+Output:
+An oval drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q10">10. Create an applet in Java to draw a arc.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class ArcApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawArc(20, 20, 150, 100, 0, 90); // Draw arc
+    }
+        
+Output:
+An arc drawn in the applet.
+
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q11">11. Create an applet in Java to change the background color.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class BackgroundColorApplet extends Applet {
+    public void init() {
+        setBackground(Color.CYAN);
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Background color changed to Cyan", 20, 20);
+    }
+        
+Output:
+Background color changed to Cyan.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q12">12. Create an applet in Java to draw rounded rectangle.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class RoundedRectangleApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRoundRect(20, 20, 200, 100, 30, 30);
+    }
+        
+Output:
+A rounded rectangle drawn in the applet.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q13">13. Create an applet in Java to set font</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Font;
+import java.awt.Graphics;
+
+public class FontApplet extends Applet {
+    public void paint(Graphics g) {
+        Font font = new Font("Serif", Font.BOLD, 20);
+        g.setFont(font);
+        g.drawString("This is a custom font!", 20, 20);
+    }
+        
+Output:
+Text displayed in a custom font.
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q14">14. Create an applet to display a digital clock.</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DigitalClockApplet extends Applet {
+    public void paint(Graphics g) {
+        String time = new SimpleDateFormat("HH:mm:ss").format(new Date());
+        g.drawString("Current Time: " + time, 20, 20);
+    }
+        
+Output:
+Current Time: HH:mm:ss (current time displayed).
+    </pre>
+    <a href="#Q">Back</a><br><br>
+    <h2 id="Q15">15. Java Program to Draw a Smiling Face using Graphics Class Methods</h2>
+    <pre>
+        Input:
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class SmilingFaceApplet extends Applet {
+    public void paint(Graphics g) {
+        // Face
+        g.setColor(Color.YELLOW);
+        g.fillOval(20, 20, 200, 200);
+
+        // Eyes
+        g.setColor(Color.BLACK);
+        g.fillOval(70, 80, 20, 20);
+        g.fillOval(150, 80, 20, 20);
+
+        // Smile
+        g.drawArc(70, 100, 120, 80, 0, -180);
+    }
+        
+Output:
+A smiling face drawn in the applet.
+    </pre>
+
+</body>
+</html>

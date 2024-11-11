@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+                color: rgb(121, 121, 218);
+                font-size: 25px;
+                background-color: rgb(255, 255, 255);
+        }
+        pre {
+            font-size: 20px;
+            
+        }
+        h2{
+            font-size: 35px;
+            color: rgb(6, 18, 100);
+        }
+      </style>
+</head>
+<body>
+    <h2 id="Q">QUESTIONS</h2>
+    <a href="#Q1">1. Write a Java method to find the smallest number among three numbers.</a><br><br>
+    <a href="#Q2">2. Write a Java method to compute the average of three numbers.</a><br><br>
+    <a href="#Q3 ">3. Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.</a><br><br>
+    <a href="#Q4">4. Write a Java method to count all the words in a string. </a><br><br>
+    <a href="#Q5 ">5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years.</a><br><br>
+    <a href="#Q6 ">6. Write a Java method to print characters between two characters (i.e. A to P).</a><br><br>
+    <a href="#Q7 ">7. Write a Java method to check whether a string is a valid password. </a><br><br>
+    <a href="#Q8 ">8. Write a Java method to display the current date and time. </a><br><br>
+    <a href="#Q9 ">9. Write a Java method to find all twin prime numbers less than 100. </a><br><br>
+    <a href="#Q10 ">10. Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.</a><br><br>
+    <a href="#Q11 ">11. Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.</a><br><br>
+    <a href="#Q12 ">12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false</a><br><br>
+    <a href="#Q13 ">13. Write a Java method that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.</a><br><br>
+
+
+
+
+
+
+    <h2 id="Q1">1. Write a Java method to find the smallest number among three numbers.</h2>
+    <pre>
+        class Main{
+            static int minOfThree(int x, int y, int z){
+                if(x < y){
+                    if(x < z){
+                        return x;
+                    }
+                    else{
+                        return z;
+                    }
+                }
+                else{
+                    if(y < z){
+                        return y;
+                    }
+                    else{
+                        return z;
+                    }
+                }
+            }
+            public static void main(String[] args){	
+                System.out.println("Minimum value of 105, 9, 209 is " + minOfThree(105,9,209));
+            }
+        }
+        Output
+Minimum value of 105, 9, 209 is 9
+    </pre>
+    <h2 id="Q2">2. Write a Java method to compute the average of three numbers.</h2>
+    <pre>
+        class Main{
+            static double avgOfThree(int x, int y, int z){
+                return ((x + y + z)/3.0);
+            }
+            public static void main(String[] args){	
+                System.out.println("Average of 105, 9, 209 is " + avgOfThree(105,9,209));
+            }
+        }
+        Output
+Average of 105, 9, 209 is 107.66666666666667
+    </pre>
+    <h2 id="Q3">3. Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.</h2>
+    <pre>
+        class Main{
+            static char[] midChar(String str){
+                int len = str.length();
+                if(len % 2 == 0){
+                    len /= 2;
+                    char[] arr = {str.charAt(len)};
+                    return arr;
+                }
+                else{
+                    len /= 2;
+                    char[] arr = {str.charAt(len), str.charAt(len+1)};
+                    return arr;
+                }
+            }
+            public static void main(String[] args){
+                char arr[];
+                arr = midChar("hellow");
+                if(arr.length == 1){
+                     System.out.println("Middle Character = " + arr[0]);
+                }
+                else{
+                    System.out.println("Middle Character = " + arr[0] + " and " + arr[1]);
+                } 
+            }
+        }
+        Output
+Middle Character = l and o
+    </pre>
+    <h2 id="Q4">4. Write a Java method to count all the words in a string.</h2>
+    <pre>
+        class Main{
+            static int wordCount(String str){	
+                int count = 0, len = str.length();
+                
+                for(int i = 0; i < len; i++){
+                    if(Character.isDigit(str.charAt(i))){
+                        while(str.charAt(i) != ' ' && (i+1) != len){
+                            i++;
+                        }
+                    }
+                    else{
+                        if((str.charAt(i) == ' ' || (i+1) == len) && Character.isLetter(str.charAt(i-1))){
+                        count++;
+                    }
+                    }
+                    
+                }
+                return count;
+            }
+        
+            public static void main(String[] args){
+                int count = wordCount("Java is a Programming Language");
+                System.out.println("Number of words in string is : " + count);
+            }
+        }
+        Output
+Number of words in string is : 5
+    </pre>
+    <h2 id="Q5">5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years.</h2>
+    <pre>
+        class Main{
+            static double getFutureValue(double amt, double roi, int time){
+                double fv = amt*Math.pow((1+(roi/100)), time);
+                return fv;
+            }
+            public static void main(String[] args){
+                System.out.println("Amount = 10000");
+                System.out.println("Rate of Interest = 10");
+                System.out.println("Years = 5");
+                System.out.printf("Your Future Value is %.2f" , getFutureValue(10000.0, 10.0, 5));
+            }
+        }
+        Output
+Amount = 10000
+Rate of Interest = 10
+Years = 5
+Your Future Value is 16105.10
+    </pre>
+    <h2 id="Q6">6. Write a Java method to print characters between two characters (i.e. A to P).</h2>
+    <pre>
+        class Main{
+            static void charBetween(char a, char b){
+                if(Character.compare(a, b) == 0 || ((a+1) == b)){
+                    System.out.println("No Characters are present between " + a + " and " + b);
+                }
+                else if(Character.compare(a, b) < 0){
+                    a++;
+                    while(a != b){
+                        System.out.print(a++ + "\t");
+                    }
+                }
+                else{
+                    b++;
+                    while(b != a){
+                        System.out.print(b++ + "\t");
+                    }
+                }
+            }
+            public static void main(String[] args){
+                System.out.println("Character Between A and F : ");
+                charBetween('A', 'F');
+            }
+        }
+        Output
+Character Between A and F :
+B       C       D       E
+    </pre>
+    <h2 id="Q7">7. Write a Java method to check whether a string is a valid password.</h2>
+    <pre>
+        class Main{
+            static Boolean isPasswordValid(String str){
+                int len = str.length(), charlen = 0;
+                boolean hasnum = false, hassymbol = false;
+        
+                if(len < 12){
+                    return false;
+                }
+                for(int i = 0; i < len; i++){
+                    if(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z' || str.charAt(i) >= 'a' && str.charAt(i) <= 'z'){
+                        charlen++;
+                    }
+                    else if(str.charAt(i) >= '0' && str.charAt(i) <= '9'){
+                        hasnum = true;
+                    }
+                    else if(str.charAt(i) >= '!' && str.charAt(i) <= '@'){
+                        hassymbol = true;	
+                    }
+                }
+                if(charlen >=8 && hasnum && hassymbol){
+                    return true;
+                }
+                return false;
+            }
+            public static void main(String[] args){
+                System.out.println(isPasswordValid("Abhishek@4204") ? "Password is Valid" : "Invalid Password" );
+                System.out.println(isPasswordValid("Abhishek4204") ? "Password is Valid" : "Invalid Password" );
+            }
+        }
+        Output
+Password is Valid
+Invalid Password
+    </pre>
+    <h2 id="Q8">8. Write a Java method to display the current date and time.</h2>
+    <pre>
+        class MyDateClass{
+            java.util.Date obj = new java.util.Date();
+            static void printDateAndTime(){
+                java.util.Date obj = new java.util.Date();
+                System.out.println("Date : "+obj.getDate()+"/"+obj.getMonth()+"/"+(obj.getYear()+1900));
+                System.out.println("Time : "+obj.getHours()+"H:"+obj.getMinutes()+"M:"+obj.getSeconds()+"S");
+            }
+            public static void main(String args[]){
+                printDateAndTime();
+            }
+        
+        }
+        Output
+Date : 16/9/2024
+Time : 23H:18M:48S
+    </pre>
+    <h2 id="Q9">9. Write a Java method to find all twin prime numbers less than 100.</h2>
+    <pre>
+        class Main{
+            static Boolean isPrime(int num){
+                for(int i = 2; i < num; i++){
+                    if(num % i == 0){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            static void twinPrime(){
+                int prevPrime = 0;
+                for(int i = 3; i <= 100; i++){
+                    if(isPrime(i)){
+                        if((i - prevPrime) == 2){
+                            System.out.println(prevPrime + " and " + i + " are twin Prime");
+                        }
+                        prevPrime = i;
+                    }
+                }
+            }
+            public static void main(String[] args){
+                twinPrime();
+            }
+        }
+        Output
+3 and 5 are twin Prime
+5 and 7 are twin Prime
+11 and 13 are twin Prime
+17 and 19 are twin Prime
+29 and 31 are twin Prime
+41 and 43 are twin Prime
+59 and 61 are twin Prime
+71 and 73 are twin Prime
+    </pre>
+    <h2 id="Q10">10. Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative. </h2>
+    <pre>
+        class Main{
+            static int numLength(int num){
+                int count = 0;
+                if(num > 0){
+                    while(num > 0){
+                        count++;
+                        num /= 10;
+                    }
+                }
+                return count;
+            }
+            public static void main(String[] args){
+                System.out.println("Number of Digits in 55969 is : " + numLength(55969));
+            }
+        }
+        Output
+        Number of Digits in 55969 is : 5
+    </pre>
+    <h2 id="Q11">11. Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.</h2>
+    <pre>
+        class Main{
+            static boolean isConsecutive(int a, int b, int c){
+                if(((a+1) == b && (a+2) == c) || (a+1) == c && (a+2) == b){
+                    return true;
+                }
+                else if(((b+1) == a && (b+2) == c) || ((b+1) == c && (b+2) == a)){
+                    return true;
+                }
+                else if(((c+1) == a && (c+2) == b) || (c+1) == b && (c+2) == a){
+                    return true;
+                }
+                return false;
+            }
+            public static void main(String[] args){
+                System.out.println((isConsecutive(9,10,8)) ? "Consecutive Numbers" : "Numbers are not Consecutive");
+            }
+        }
+        Output
+Consecutive Numbers
+    </pre>
+    <h2 id="Q12">12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false </h2>
+    <pre>
+        class Main{
+            static boolean isOneMiddle(int a, int b, int c){
+                if(a == (b+c)/2 || b == (a+c)/2 || c == (b+a)/2){
+                    return true;
+                }
+                return false;
+            }
+            public static void main(String[] args){
+                System.out.println((isOneMiddle(10, 100, 55)) ? "Entered numbers contain middle number " : "Numbers does not contain middle number");
+            }
+        }
+        Output
+Entered numbers contain middle number
+    </pre>
+    <h2 id="Q13">13. Write a Java method that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.</h2>
+    <pre>
+        class Main{
+            static boolean isVowel(char ch){
+                if(ch == 'A' || ch == 'a' || ch == 'E' || ch == 'e' || ch == 'I' || ch == 'i' || ch == 'O' || ch == 'o' || ch == 'U' || ch == 'u'){
+                    return true;
+                }
+                return false;
+            }
+            static boolean hasAllVowel(String str){
+                for(int i = 0; i < str.length(); i++){
+                    if(!isVowel(str.charAt(i))){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            public static void main(String[] args){
+                System.out.println((hasAllVowel("aerou")) ? "String Contains Vowels only" : "String Contains Vowels and Consonents");
+            }
+        }
+        Output
+String Contains Vowels and Consonents
+    </pre>
+</body>
+</html>
